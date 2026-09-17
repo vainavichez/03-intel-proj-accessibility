@@ -1,0 +1,226 @@
+/* import font from CDN fonts (same font as intel logo) */
+
+@import url('https://fonts.cdnfonts.com/css/neo-sans-pro');
+                
+
+/* Remove default browser margins to make header span full width */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Neo Sans Pro", "Arial", sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Resize SVG logo - width adjusts the size, height auto keeps proportions */
+header img {
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Make sure the header container shows the full logo */
+header {
+  overflow: visible;
+  background-color: #003366;
+  color: white;
+  padding: clamp(20px, 5vw, 40px);
+  max-width: 100%;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header typography */
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+header p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  max-width: 600px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Timeline cards section - horizontal scrolling layout */
+section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: clamp(10px, 5vw, 20px);
+  padding: clamp(5px, 3vw, 20px);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Individual timeline cards */
+section div {
+  flex-shrink: 0;
+  width: clamp(300px, 90vw, 520px);
+  border: 1px solid #ddd;
+  padding: clamp(10px, 4vw, 20px);
+  border-radius: 8px;
+  position: relative;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+section div:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Images inside timeline cards */
+section div img {
+  width: 100%;
+  aspect-ratio: 500 / 333;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Card titles */
+section div h2 {
+  margin: 0 0 5px 0;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: #003366;
+}
+
+section div h3 {
+  margin: 0 0 15px 0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #666;
+  font-weight: 600;
+}
+
+/* Hide text content by default */
+section div p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show text content on hover */
+section div:hover p {
+  opacity: 1;
+}
+
+/* Center the instruction text */
+.timeline-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.timeline-instruction p {
+  margin: 0;
+  color: #666;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Footer styling */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: clamp(20px, 3vw, 30px);
+  margin-top: 30px;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tablet responsive - optimize for medium screens (650px - 1024px) */
+@media (max-width: 1024px) and (min-width: 650px) {
+  /* Keep horizontal scroll but adjust card size for tablets */
+  section {
+    padding: clamp(10px, 3vw, 20px);
+  }
+
+  section div {
+    width: clamp(280px, 80vw, 420px);
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile responsive - stack cards vertically on narrow screens */
+@media (max-width: 649px) {
+  /* Stack cards vertically with less padding */
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+    padding: 10px;
+  }
+
+  /* Make cards full width */
+  section div {
+    width: 100%;
+    scroll-snap-align: none;
+    box-sizing: border-box;
+  }
+
+  /* Show text content always, no hover effect */
+  section div p {
+    position: relative;
+    opacity: 1;
+    transition: none;
+  }
+
+  /* Remove hover effect */
+  section div:hover p {
+    opacity: 1;
+  }
+
+  /* Adjust image to fit full-width card while maintaining aspect ratio */
+  section div img {
+    width: 100%;
+    aspect-ratio: 500 / 333;
+  }
+
+  /* Adjust header for mobile */
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+}
+
+  
