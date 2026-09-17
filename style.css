@@ -156,6 +156,16 @@ footer p {
   line-height: 1.6;
 }
 
+footer a {
+  color: #ffcc00;
+  margin: 0 8px;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #ffe680;
+}
+
 /* Tablet responsive - optimize for medium screens (650px - 1024px) */
 @media (max-width: 1024px) and (min-width: 650px) {
   /* Keep horizontal scroll but adjust card size for tablets */
