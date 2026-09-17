@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link id="bootstrap-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,16 +15,18 @@
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
       <!-- Main Heading -->
-      <h1>
+      <h1 id="page-heading">
         Sustainability Through the Ages
       </h1>
 
       <!-- Subheading / Description -->
-      <p>
+      <p id="page-description">
         Explore Intel's journey through time, discovering how our commitment
         to innovation has shaped a more sustainable future for technology 
         and our planet.
       </p>
+
+      <div id="google_translate_element" aria-label="Choose a language"></div>
     </div>
   </header>
 
@@ -141,12 +144,39 @@
 
   <!-- Instruction Text -->
   <div class="timeline-instruction">
-    <p>Scroll to center a card and learn more!</p>
+    <p id="timeline-instruction">Scroll to center a card and learn more!</p>
+  </div>
+
+  <!-- Subscription Form -->
+  <div class="subscription-section bg-light py-5">
+    <div class="container">
+      <h2 id="subscription-heading" class="text-center mb-4">Subscribe for sustainability updates</h2>
+
+      <form>
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-4">
+            <label for="subscriber-name" id="name-label" class="form-label">Name</label>
+            <input type="text" class="form-control" id="subscriber-name" placeholder="Your name" />
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label for="subscriber-email" id="email-label" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" />
+          </div>
+
+          <div class="col-12 col-md-4">
+            <button type="submit" id="subscribe-button" class="btn btn-primary w-100">Subscribe</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Intel Corporation. Committed to building a sustainable future through innovation.</p>
+    <p id="footer-text">&copy; 2026 Intel Corporation. Committed to building a sustainable future through innovation.</p>
   </footer>
+  <script src="script.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
