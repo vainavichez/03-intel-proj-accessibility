@@ -166,6 +166,19 @@ footer a:focus {
   color: #ffe680;
 }
 
+/* Style Explore Intel links as buttons */
+.explore-button {
+  background-color: #003366;
+  color: white;
+}
+
+.explore-button:hover,
+.explore-button:focus {
+  background-color: #003366;
+  box-shadow:inset 0 0 8px rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
 /* Tablet responsive - optimize for medium screens (650px - 1024px) */
 @media (max-width: 1024px) and (min-width: 650px) {
   /* Keep horizontal scroll but adjust card size for tablets */
