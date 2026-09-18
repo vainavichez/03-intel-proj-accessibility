@@ -52,6 +52,23 @@ header p {
   margin: 0;
 }
 
+/* Improve contrast for the Google Translate widget */
+#google_translate_element .skiptranslate.goog-te-gadget {
+  background-color: white;
+  color: #003366;
+  padding: 6px;
+}
+
+#google_translate_element .goog-te-combo {
+  background-color: white;
+  color: #003366;
+}
+
+#google_translate_element .goog-te-gadget a,
+#google_translate_element .goog-te-gadget span {
+  color: #003366;
+}
+
 /* Timeline cards section - horizontal scrolling layout */
 section {
   display: flex;
